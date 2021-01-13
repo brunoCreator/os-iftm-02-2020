@@ -5,15 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class Endereco {
+public class Endereco implements Serializable{
+    
     private Integer id;
     private String descricao;
     private String logradouro;
     private String numero;
     private String complemento;
-    private String bairro;        
-    private String cep; 
-    private String cidade;    
-    private String estado; 
-    private Integer cliente_id; 
+    private String bairro;
+    private String cep;
+    private String cidade;
+    private String estado;
+    private Cliente cliente;
+    
 }
