@@ -2,13 +2,18 @@ package br.edu.iftm.os.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -29,10 +34,10 @@ public class OS implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
-    
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+        
+
+    @Column(name = "cliente_id")
+    private int cliente;
     
     @Column(name = "codigo_os")
     private String codigoOS;
@@ -44,8 +49,8 @@ public class OS implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_abertura")
     private Date dataAbertura;
-
     
+
     
     
 }

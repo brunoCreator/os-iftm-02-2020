@@ -12,20 +12,20 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "detalhes")
+@Table(name = "servicos")
 @Getter 
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(onlyExplicitlyIncluded = true)
-public class Detalhes implements Serializable {
+public class Servico implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
     
-    private String nome;
-    private String tipo;//Texto, Combobox (selectOneMenu), radio e checkbox.
-    private String valores; //será usado caso de combobox, redio e checkbox.
+    private String descricao;
+    private Double valor;
     
 }
+
